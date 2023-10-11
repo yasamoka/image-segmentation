@@ -1,5 +1,5 @@
 [package]
-name = "image-segmentation"
+name = "segment"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,8 +8,19 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.75"
 clap = { version = "4.4.6", features = ["derive"] }
+futures = "0.3.28"
 opencv = "0.85.1"
 png = "0.17.10"
+reqwest = "0.11.22"
 serde = { version = "1.0.188", features = ["serde_derive"] }
 serde_json = "1.0.107"
 serde_with = { version = "3.3.0", features = ["base64"] }
+tokio = { version = "1.33.0", features = ["full"] }
+
+[[bin]]
+name = "infer"
+path = "src/bin/infer.rs"
+
+[[bin]]
+name = "segment"
+path = "src/bin/segment.rs"
